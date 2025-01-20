@@ -3,7 +3,7 @@ Universal Web Scraping Code Created by AI
 www.coprser.com
 
 
-'''
+```python
 from coparser.amazon.com import *
 
 if __name__ == '__main__':
@@ -23,4 +23,4 @@ if __name__ == '__main__':
         print(result)
 
 
-'''
+```

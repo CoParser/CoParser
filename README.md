@@ -4,7 +4,21 @@ www.coprser.com
 
 
 ```python
-from coparser.amazon-com import *
+
+from coparser.amazon_com import *
+def get_html(url):
+    import time
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        page = browser.new_page()
+        page.goto(url,wait_until='domcontentloaded')       
+        time.sleep(10)
+        page_source = page.content()
+        browser.close()
+        with open("debug.html", "w", encoding="utf-8") as file:
+            file.write(page_source)
+        return page_source
 
 if __name__ == '__main__':
         import lxml.html
@@ -21,6 +35,5 @@ if __name__ == '__main__':
         result['AverageReview']=extract_AverageReview(tree)
 
         print(result)
-
 
 ```

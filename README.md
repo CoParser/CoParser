@@ -4,7 +4,7 @@ www.coprser.com
 
 
 ```python
-from coparser.amazon.com import *
+from coparser.amazon-com import *
 
 if __name__ == '__main__':
         import lxml.html
